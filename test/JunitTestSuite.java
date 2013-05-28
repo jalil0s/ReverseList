@@ -1,10 +1,11 @@
 package test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	TestReverseIteratively.class,
-	TestReverseRecursivly.class,
+	//TestReverseRecursivly.class,
    //TestJunit2.class
 })
 public class JunitTestSuite {   

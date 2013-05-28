@@ -1,52 +1,39 @@
 package source;
 
 /*
- * 
  * ----------------------------------------
  *       STRECTURE OF LINKEDLIST
- *----------------------------------------
- * 			 Constructor
- * LinkedList() 
- * 
- *  	   Getter and Setter				
- * ListNode getList()
- * void setList(ListNode setListNode)
- * 
- *         Helpers methods
- * ListNode add(int data)
- * StringBuilder printList()
- * 
- */
+ *----------------------------------------*/
 
 public class LinkedList {
 	
-	private ListNode listNode;
+	private Node Node;
 	StringBuilder s = new StringBuilder();
 	
-	public class ListNode {
+	public class Node {
 		int data;
-		ListNode next = null;
+		Node next = null;
 
 	}
 	
 	//Constructor
 	public LinkedList() {
-		listNode = new ListNode();
+		Node = new Node();
 	}
 	
 	//Getter
-	public ListNode getList() {
-		return listNode;
+	public Node getList() {
+		return Node;
 	}
 	
 	//SETTER
-	public void setList(ListNode setListNode) {
-		listNode = setListNode;
+	public void setList(Node setNode) {
+		Node = setNode;
 	}
 
 	//ADD NODE TO LISE
-	public ListNode add(int data) {
-		ListNode tempList = listNode;
+	public Node add(int data) {
+		Node tempList = Node;
 		if ((tempList.next == null) && (tempList.data == 0)) {
 			tempList.data = data;
 			return tempList;
@@ -54,7 +41,7 @@ public class LinkedList {
 			while (tempList.next != null) {
 				tempList = tempList.next;
 			}
-			ListNode newNode = new ListNode();
+			Node newNode = new Node();
 			newNode.data = data;
 			tempList.next = newNode;
 			return newNode;
@@ -64,9 +51,9 @@ public class LinkedList {
 	//PRINT NODE
 	public StringBuilder printList() {
 		s.setLength(0);
-		ListNode tempNode = listNode;
+		Node tempNode = Node;
 		while (tempNode != null) {
-			s.append(tempNode.data + ",");
+			s.append(tempNode.data + "->");
 			tempNode = tempNode.next;
 		}
 		s.append("null");
@@ -76,10 +63,10 @@ public class LinkedList {
 	
 
 	//1. An iterative reverse.
-	public static ListNode reverseIteratively(ListNode headerNode) {
-		ListNode prevNode = null;
-		ListNode currNode = headerNode;
-		ListNode nextNode = null;
+	public  static Node reverseIteratively(Node headerNode) {
+		Node prevNode = null;
+		Node currNode = headerNode;
+		Node nextNode = null;
 
 		while (currNode != null) {
 			nextNode = currNode.next;
@@ -93,7 +80,7 @@ public class LinkedList {
 	
 	
 //	2. A recursive reverse.
-	public static ListNode reverseRecursivly(ListNode headerNode) {
+	public static  Node reverseRecursivly(Node headerNode) {
 		// Reverse of a empty list or null list is null
 		if (headerNode == null) {
 			return null;
@@ -108,13 +95,13 @@ public class LinkedList {
 		// by first element
 
 		// Get the list node pointed by second element
-		ListNode secondElementNode = headerNode.next;
+		Node secondElementNode = headerNode.next;
 
 		// Unlink the first element
 		headerNode.next = null;
 
 		// Reverse everything from the second element
-		ListNode revNode = reverseRecursivly(secondElementNode);
+		Node revNode = reverseRecursivly(secondElementNode);
 
 		// Now we join both the lists
 		secondElementNode.next = headerNode;
