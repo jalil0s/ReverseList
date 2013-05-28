@@ -24,7 +24,7 @@ public class TestReverseIteratively {
 		this.expectedResult = expectedResult;
 	}
 	
-	public static String TestIteratively(int a) {
+	public String TestIteratively(int a) {
 		LinkedList newList = new LinkedList();
 		for (int i = 1; i < a; i++) {
 			newList.add(i);
@@ -53,7 +53,7 @@ public class TestReverseIteratively {
 	   // This test will run 4 times since we have 5 parameters defined
 	   @Test
 	   public void testReverse() {
-		  assertEquals(expectedResult, TestReverseIteratively.TestIteratively(inputNumber));
+		  assertEquals(expectedResult, TestIteratively(inputNumber));
 	   }
 
 }

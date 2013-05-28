@@ -25,7 +25,7 @@ public class TestReverseRecursivly {
 		this.expectedResult = expectedResult;
 	}
 
-	public static String TestRecursivly(int a) {
+	public String TestRecursivly(int a) {
 		LinkedList newList = new LinkedList();
 		for (int i = 1; i < a; i++) {
 			newList.add(i);
@@ -54,7 +54,7 @@ public class TestReverseRecursivly {
 	   // This test will run 4 times since we have 5 parameters defined
 	   @Test
 	   public void testReverse() {
-	      assertEquals(expectedResult, TestReverseRecursivly.TestRecursivly(inputNumber));
+	      assertEquals(expectedResult, TestRecursivly(inputNumber));
 	   }
 
 }
